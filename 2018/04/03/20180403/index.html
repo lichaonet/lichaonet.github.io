@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/head.jpg"/>
+	<link rel="shortcut icon" href="/img/head.jpg">
+	
+			    <title>
+    lance
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="lance" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg3.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">LANCE</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="" title="暂无">
+		                暂无
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/lichaonet" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://p6bwqko37.bkt.clouddn.com/PS061120170608.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >使用js-sdk自定义微信分享~</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h3 id="初始效果"><a href="#初始效果" class="headerlink" title="初始效果"></a>初始效果</h3><p><img src="http://p6bwqko37.bkt.clouddn.com/%E5%88%86%E4%BA%AB%E6%95%88%E6%9E%9C1.jpg" alt=""></p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li><p>已认证的微信服务号~  需要获取里面的几个参数（下面详细介绍）。  </p>
+</li>
+<li><p>一个ICP备案的域名：需要用这个域名设置微信公众号的js接口安全域名，否则微信仍然不给调用它的接口！</p>
+<p>难道不能在本地测试了吗？？肯定可以呀！</p>
+<p>这里提供一个解决方法：</p>
+<p>花生壳官网：<a href="http://hsk.oray.com/price/#personal" target="_blank" rel="noopener">http://hsk.oray.com/price/#personal</a></p>
+<p>选择个人免费版的就ok了，申请个最便宜的域名 5元左右就可以开始测试啦~</p>
+</li>
+<li><p>工欲善其事必先利其器！测试开发必须先下个开发工具，用于本地调试！！！</p>
+<p>下载地址：<a href="https://mp.weixin.qq.com/debug/cgi-bin/webdebugger/download?from=mpwiki&amp;os=x64" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/cgi-bin/webdebugger/download?from=mpwiki&amp;os=x64</a></p>
+<p>官方使用教程：<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1455784140" target="_blank" rel="noopener">https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1455784140</a></p>
+</li>
+</ol>
+<h3 id="开始啦"><a href="#开始啦" class="headerlink" title="开始啦"></a>开始啦</h3><p>1：进入微信开发平台</p>
+<p><img src="http://p6bwqko37.bkt.clouddn.com/%E5%88%86%E4%BA%AB3.png" alt=""></p>
+<p>配置需要用到的参数</p>
+<p><img src="http://p6bwqko37.bkt.clouddn.com/%E5%88%86%E4%BA%AB2.jpg" alt=""></p>
+<p>!!! 一定要记住AppSecret 不然很麻烦！！</p>
+<p>接着配置js接口安全域名 <img src="http://p6bwqko37.bkt.clouddn.com/%E5%88%86%E4%BA%AB5.png" alt=""></p>
+<p><img src="http://p6bwqko37.bkt.clouddn.com/%E5%88%86%E4%BA%AB4.png" alt=""></p>
+<p>记住：一定要将文件MP_XXXXX 放在web服务器目录下 </p>
+<p>2：在页面引入js文件</p>
+<p>（如果域名前缀是https的话，引用也必须是https，不然会出错）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://res.wx.qq.com/open/js/jweixin-1.2.0.js&quot; &gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>3：通过appid，appsecret请求accessToken，然后通过accessToken获取jsapi_ticket，生成wx.config接口所需要的参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">wx.config(&#123;</span><br><span class="line">    debug: false,//正式服务器得关闭debug，测试的时候可以打开设置为true</span><br><span class="line">    appId: &apos;&apos;, //appid</span><br><span class="line">    timestamp: timestamp, //后台生成时间戳</span><br><span class="line">    nonceStr: noncestr,	//后台随机生成的字符串（S在前端要大写，后台获取时是小写s！）</span><br><span class="line">    signature: signature,//后台生成签名</span><br><span class="line">    jsApiList: [</span><br><span class="line">        &apos;checkJsApi&apos;,</span><br><span class="line">        &apos;onMenuShareTimeline&apos;,</span><br><span class="line">        &apos;onMenuShareAppMessage&apos;,</span><br><span class="line">        &apos;onMenuShareQQ&apos;,</span><br><span class="line">        &apos;onMenuShareWeibo&apos;,</span><br><span class="line">        &apos;onMenuShareQZone&apos;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>附上后台代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line">public class WeiXinBiz &#123;</span><br><span class="line"></span><br><span class="line">    public final static String access_token_url=&quot;https://api.weixin.qq.com/cgi-bin/token?&quot; +</span><br><span class="line">            &quot;grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET&quot;;</span><br><span class="line">    public final static String jsapi_ticket_url=&quot;https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&amp;type=jsapi&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取微信分享配置数据（签名，时间戳，随机字符串）</span><br><span class="line">     *</span><br><span class="line">     *            接口url</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public Map&lt;String, Object&gt; getWeixinConfig(String url, String type)&#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();</span><br><span class="line">        //获取access_token</span><br><span class="line">        String access_token = getAccess_token();</span><br><span class="line"></span><br><span class="line">        if(access_token == null)&#123;</span><br><span class="line">            map.put(&quot;result&quot;, &quot;access_token获取失败&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line">        //获取jsapi_ticket</span><br><span class="line">        String jsapi_ticket = getJsapi_ticket(access_token);</span><br><span class="line">        if(jsapi_ticket == null)&#123;</span><br><span class="line">            map.put(&quot;result&quot;, &quot;jsapi_ticket获取失败&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line">        //生成签名</span><br><span class="line">        String noncestr     = &quot;Wm3WZYTPz0wzccnW&quot;;       //字符串</span><br><span class="line">        //String url = &quot;http://www.repinhr.com/possition/&quot;+type+&quot;/&quot;+id+&quot;.html&quot;;</span><br><span class="line">        String timestamp = System.currentTimeMillis()+&quot;&quot;;//时间戳</span><br><span class="line">        timestamp = timestamp.substring(0, 10);</span><br><span class="line">        String[] signatureArray = new String[]&#123;</span><br><span class="line">                &quot;jsapi_ticket=&quot;+jsapi_ticket,</span><br><span class="line">                &quot;noncestr=&quot;+noncestr,</span><br><span class="line">                &quot;timestamp=&quot;+timestamp,</span><br><span class="line">                &quot;url=&quot;+url</span><br><span class="line">        &#125;;</span><br><span class="line">        Arrays.sort(signatureArray);</span><br><span class="line">        String signatureStr = signatureArray[0]+&quot;&amp;&quot;</span><br><span class="line">                +signatureArray[1]+&quot;&amp;&quot;+signatureArray[2]+&quot;&amp;&quot;+signatureArray[3];</span><br><span class="line">        String signature = new MySecurity().encode(signatureStr,MySecurity.SHA_1);</span><br><span class="line">        System.out.println(&quot;----jsapi_ticket-----::&quot;+jsapi_ticket);</span><br><span class="line">        System.out.println(&quot;----timestamp-----::&quot;+timestamp);</span><br><span class="line">        System.out.println(&quot;----noncestr-----::&quot;+noncestr);</span><br><span class="line">        System.out.println(&quot;----signature-----::&quot;+signature);</span><br><span class="line">        map.put(&quot;jsapi_ticket&quot;, jsapi_ticket);</span><br><span class="line">        map.put(&quot;timestamp&quot;, timestamp);</span><br><span class="line">        map.put(&quot;noncestr&quot;, noncestr);</span><br><span class="line">        map.put(&quot;signature&quot;, signature);</span><br><span class="line">        return map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取微信jsapi_ticket</span><br><span class="line">     *</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public String getJsapi_ticket(String access_token)&#123;</span><br><span class="line">        String requestUrl = jsapi_ticket_url.replace(&quot;ACCESS_TOKEN&quot;, access_token);</span><br><span class="line">        JSONObject jsonObject=httpRequst(requestUrl, &quot;GET&quot;, null);</span><br><span class="line">        if(jsonObject != null)&#123;</span><br><span class="line">            return jsonObject.getString(&quot;ticket&quot;);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取微信access_token</span><br><span class="line">     *</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public String getAccess_token()&#123;</span><br><span class="line">        //String pathClass = this.getClass().getClassLoader().getResource(&quot;/&quot;).getPath();// 服务器Classes根路径</span><br><span class="line">        String appid = &quot;wxfdd7423dfbfa8fa1&quot;;</span><br><span class="line">        String appsecret =&quot;d4c7d953f6d5060ab6ea10b12652d310&quot;;</span><br><span class="line">        String requestUrl = access_token_url.replace(&quot;APPID&quot;, appid).replace(&quot;APPSECRET&quot;, appsecret);</span><br><span class="line">        JSONObject jsonObject=httpRequst(requestUrl, &quot;GET&quot;, null);</span><br><span class="line">        if(jsonObject != null)&#123;</span><br><span class="line">            return jsonObject.getString(&quot;access_token&quot;);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 请求接口</span><br><span class="line">     *</span><br><span class="line">     * @param requestUrl</span><br><span class="line">     *            接口url</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public JSONObject httpRequst(String requestUrl,String requetMethod,String outputStr)&#123;</span><br><span class="line">        JSONObject jsonobject=null;</span><br><span class="line">        StringBuffer buffer=new StringBuffer();</span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            //创建SSLContext对象，并使用我们指定的新人管理器初始化</span><br><span class="line">            TrustManager[] tm=&#123;new MyX509TrustManager()&#125;;</span><br><span class="line">            SSLContext sslcontext=SSLContext.getInstance(&quot;SSL&quot;,&quot;SunJSSE&quot;);</span><br><span class="line">            sslcontext.init(null, tm, new java.security.SecureRandom());</span><br><span class="line">            //从上述SSLContext对象中得到SSLSocktFactory对象</span><br><span class="line">            SSLSocketFactory ssf=sslcontext.getSocketFactory();</span><br><span class="line"></span><br><span class="line">            URL url=new URL(requestUrl);</span><br><span class="line">            HttpsURLConnection httpUrlConn=(HttpsURLConnection)url.openConnection();</span><br><span class="line">            httpUrlConn.setSSLSocketFactory(ssf);</span><br><span class="line"></span><br><span class="line">            httpUrlConn.setDoOutput(true);</span><br><span class="line">            httpUrlConn.setDoInput(true);</span><br><span class="line">            httpUrlConn.setUseCaches(false);</span><br><span class="line">            //设置请求方式（GET/POST）</span><br><span class="line">            httpUrlConn.setRequestMethod(requetMethod);</span><br><span class="line"></span><br><span class="line">            if(&quot;GET&quot;.equalsIgnoreCase(requetMethod))</span><br><span class="line">                httpUrlConn.connect();</span><br><span class="line"></span><br><span class="line">            //当有数据需要提交时</span><br><span class="line">            if(null!=outputStr)</span><br><span class="line">            &#123;</span><br><span class="line">                OutputStream outputStream=httpUrlConn.getOutputStream();</span><br><span class="line">                //注意编码格式，防止中文乱码</span><br><span class="line">                outputStream.write(outputStr.getBytes(&quot;UTF-8&quot;));</span><br><span class="line">                outputStream.close();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //将返回的输入流转换成字符串</span><br><span class="line">            InputStream inputStream=httpUrlConn.getInputStream();</span><br><span class="line">            InputStreamReader inputStreamReader=new InputStreamReader(inputStream,&quot;utf-8&quot;);</span><br><span class="line">            BufferedReader bufferedReader=new BufferedReader(inputStreamReader);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            String str=null;</span><br><span class="line">            while((str = bufferedReader.readLine()) !=null)</span><br><span class="line">            &#123;</span><br><span class="line">                buffer.append(str);</span><br><span class="line">            &#125;</span><br><span class="line">            bufferedReader.close();</span><br><span class="line">            inputStreamReader.close();</span><br><span class="line">            //释放资源</span><br><span class="line">            inputStream.close();</span><br><span class="line">            inputStream=null;</span><br><span class="line">            httpUrlConn.disconnect();</span><br><span class="line">            jsonobject=JSONObject.fromObject(buffer.toString());</span><br><span class="line">        &#125;</span><br><span class="line">        catch (ConnectException ce) &#123;</span><br><span class="line">            // TODO: handle exception</span><br><span class="line">        &#125;</span><br><span class="line">        catch (Exception e) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        return jsonobject;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//================================================获取access_token==============================================================</span><br><span class="line">class MyX509TrustManager implements X509TrustManager</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public void checkClientTrusted(X509Certificate[] chain, String authType)</span><br><span class="line">            throws CertificateException &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void checkServerTrusted(X509Certificate[] chain, String authType)</span><br><span class="line">            throws CertificateException &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里需要引入一个weixinapi.jar</p>
+<p>前端代码附上:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 微信分享</span><br><span class="line"> */</span><br><span class="line">var imgUrl = &apos;&apos;;//写上图片路径</span><br><span class="line">var lineLink = &apos;&apos;;//分享链接的url路径</span><br><span class="line">var shareTitle = &apos;&apos;;//分享标题</span><br><span class="line">var descContent = &quot;&quot;;//分享内容</span><br><span class="line">var timestamp = &quot;&quot;;//不用填写，后台获取</span><br><span class="line">var noncestr = &quot;&quot;;</span><br><span class="line">var signature = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    type : &quot;POST&quot;,</span><br><span class="line">    url : &apos;&apos;,	//通过ajax请求，获取后台微信配置数据</span><br><span class="line">    dataType : &apos;json&apos;,</span><br><span class="line">    data : &#123;url:lineLink&#125;,</span><br><span class="line">    cache : true,</span><br><span class="line">    success : function(data) &#123;</span><br><span class="line">        timestamp = data.timestamp;</span><br><span class="line">        noncestr = data.noncestr;</span><br><span class="line">        signature = data.signature;</span><br><span class="line">        wx.config(&#123;</span><br><span class="line">            debug: false,</span><br><span class="line">            appId: &apos;&apos;,</span><br><span class="line">            timestamp: timestamp,</span><br><span class="line">            nonceStr: noncestr,</span><br><span class="line">            signature: signature,</span><br><span class="line">            jsApiList: [</span><br><span class="line">                &apos;checkJsApi&apos;,	//测试是否成功访问js接口</span><br><span class="line">                &apos;onMenuShareTimeline&apos;,</span><br><span class="line">                &apos;onMenuShareAppMessage&apos;,</span><br><span class="line">                &apos;onMenuShareQQ&apos;,</span><br><span class="line">                &apos;onMenuShareWeibo&apos;,</span><br><span class="line">                &apos;onMenuShareQZone&apos;</span><br><span class="line">            ]</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">wx.ready(function () &#123;</span><br><span class="line">    wx.onMenuShareAppMessage(&#123; //分享给好友</span><br><span class="line">        title: shareTitle,</span><br><span class="line">        desc: descContent,</span><br><span class="line">        link: lineLink,</span><br><span class="line">        imgUrl: imgUrl,</span><br><span class="line">        trigger: function(res) &#123;</span><br><span class="line">            // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回</span><br><span class="line">        &#125;,</span><br><span class="line">        success: function(res) &#123;</span><br><span class="line">          //成功分享后，调用此处</span><br><span class="line">        &#125;,</span><br><span class="line">        cancel: function(res) &#123;&#125;,</span><br><span class="line">        fail: function(res) &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareTimeline(&#123;	//分享朋友圈</span><br><span class="line">        title: shareTitle,</span><br><span class="line">        link: lineLink,</span><br><span class="line">        imgUrl: imgUrl,</span><br><span class="line">        trigger: function(res) &#123;</span><br><span class="line">            // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回</span><br><span class="line">        &#125;,</span><br><span class="line">        success: function(res) &#123;&#125;,</span><br><span class="line">        cancel: function(res) &#123;&#125;,</span><br><span class="line">        fail: function(res) &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareQQ(&#123;</span><br><span class="line">        title: shareTitle,</span><br><span class="line">        desc: descContent,</span><br><span class="line">        link: lineLink,</span><br><span class="line">        imgUrl: imgUrl,</span><br><span class="line">        trigger: function(res) &#123;&#125;,</span><br><span class="line">        complete: function(res) &#123;&#125;,</span><br><span class="line">        success: function(res) &#123;&#125;,</span><br><span class="line">        cancel: function(res) &#123;&#125;,</span><br><span class="line">        fail: function(res) &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareWeibo(&#123;</span><br><span class="line">        title: shareTitle,</span><br><span class="line">        desc: descContent,</span><br><span class="line">        link: lineLink,</span><br><span class="line">        imgUrl: imgUrl,</span><br><span class="line">        trigger: function(res) &#123;&#125;,</span><br><span class="line">        complete: function(res) &#123;&#125;,</span><br><span class="line">        success: function(res) &#123;&#125;,</span><br><span class="line">        cancel: function(res) &#123;&#125;,</span><br><span class="line">        fail: function(res) &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareQZone(&#123;</span><br><span class="line">        title: shareTitle,</span><br><span class="line">        desc: descContent,</span><br><span class="line">        link: lineLink,</span><br><span class="line">        imgUrl: imgUrl,</span><br><span class="line">        trigger: function(res) &#123;&#125;,</span><br><span class="line">        complete: function(res) &#123;&#125;,</span><br><span class="line">        success: function(res) &#123;&#125;,</span><br><span class="line">        cancel: function(res) &#123;&#125;,</span><br><span class="line">        fail: function(res) &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>到这里代码已经写完啦~ </p>
+<p>4：开始用微信开发者工具测试~~</p>
+<p>在前面的代码里设置debug为true，测试成功后记得改回false哦！</p>
+<p>5：成功效果图</p>
+<p><img src="http://p6bwqko37.bkt.clouddn.com/%E5%88%86%E4%BA%AB6.jpg" alt=""></p>
+<p>！！！！！！！！！！！！！！！！！！！！ 开心开心</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/04/03/20180403/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/04/03/20180403/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://lichaonet.github.io " style="border-bottom: none;">lance</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
